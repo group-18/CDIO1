@@ -1,15 +1,17 @@
 package spil;
 
 public class Player {
-    private String navn;
+    private String name;
     private int score;
+    int faceValue;
+    int lastRoll;
 
-    public Player(String navn){
-        this.navn=navn;
+    public Player(String name){
+        this.name=name;
     }
 
     public String getName(){
-        return this.navn;
+        return this.name;
     }
 
     public int addScore(int faceValue) {
@@ -24,4 +26,14 @@ public class Player {
         this.score = 0;
         return this.score;
     }
+
+    public int getLastRoll() {
+        return lastRoll;
+    }
+
+    public int setLastRoll() {
+        this.lastRoll = faceValue;
+        return lastRoll;
+    }
+
 }
