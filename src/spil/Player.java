@@ -14,8 +14,8 @@ public class Player {
         return this.name;
     }
 
-    public void addScore(int faceValue) {
-        this.score = this.score + faceValue;
+    public void addScore(int sum) {
+        this.score = this.score + sum;
     }
 
     public int getScore(){

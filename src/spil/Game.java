@@ -5,8 +5,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         int totalscore = 40;
-        int p1Totalscore = 0;
-        int p2Totalscore = 0;
+
         boolean p1orp2 = true;
 
         System.out.println("Indtast spiller 1 navn");
@@ -24,7 +23,7 @@ public class Game {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
 
-        while (p1Totalscore < totalscore && p2Totalscore < totalscore)
+        while (p1.getScore() < totalscore && p2.getScore() < totalscore)
         {
             if (p1orp2 == true) {
                 System.out.println(p1.getName() + "'s tur, tast" + " \"roll\" " + "for at kaste terningen");
@@ -46,26 +45,26 @@ public class Game {
 
                 if (p1orp2 == true) {
                     // Gem i player 1
-                    p1Totalscore = p1Totalscore + sum1;
+                    p1.addScore(sum1);
                     p1orp2 = false;
                 } else {
                     // Gem i player 2
-                    p2Totalscore = p2Totalscore + sum1;
+                     p2.addScore(sum1);
                     p1orp2 = true;
                 }
 
                 System.out.println ("Stillingen er nu:");
-                System.out.println (p1.getName() + " totalscore er: " + p1Totalscore);
-                System.out.println (p2.getName() + " totalscore er: " + p2Totalscore);
+                System.out.println (p1.getName() + " totalscore er: " + p1.getScore());
+                System.out.println (p2.getName() + " totalscore er: " + p2.getScore());
             }
         }
-        if (p1Totalscore> p2Totalscore)
+        if (p1.getScore()> p2.getScore())
         {
-            System.out.println("Player 1 har vundet spillet og har: " + p1Totalscore + " point");
+            System.out.println(p1.getName() + " har vundet spillet med: " + p1.getScore() + " point");
         }
         else
         {
-            System.out.println("Player 2 har vundet spillet og har: " + p2Totalscore + " point");
+            System.out.println(p2.getName() + " har vundet spillet med: " + p2.getScore() + " point");
         }
 
     }
