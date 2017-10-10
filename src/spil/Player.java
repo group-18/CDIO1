@@ -31,7 +31,7 @@ public class Player {
         return lastRoll;
     }
 
-    public void setLastRoll() {
+    public void setLastRoll(int faceValue) {
         this.lastRoll = faceValue;
     }
 
