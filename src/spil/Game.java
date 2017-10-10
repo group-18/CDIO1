@@ -33,25 +33,36 @@ public class Game {
             }
             String svar = scanner.next();
 
-            if (svar.equalsIgnoreCase("roll"))
-            {
-                d1.roll(); d2.roll();
+            if (svar.equalsIgnoreCase("roll")) {
+                d1.roll();
+                d2.roll();
 
                 System.out.println("Du slog " + d1.getFaceValue() + " og " + d2.getFaceValue());
 
                 int sum1 = d1.getFaceValue() + d2.getFaceValue();
 
-                System.out.println ("Summen af dit slag er " + sum1);
+                System.out.println("Summen af dit slag er " + sum1);
 
-                if (p1orp2 == true) {
+
+                if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
                     // Gem i player 1
                     p1.addScore(sum1);
                     p1orp2 = false;
-                } else {
+                }
+                 else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
+                    p1.addScore(sum1);
+                    p1orp2 = true;
+                } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()){
                     // Gem i player 2
-                     p2.addScore(sum1);
+                    p2.addScore(sum1);
                     p1orp2 = true;
                 }
+                else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
+
+                    p2.addScore(sum1);
+                    p1orp2 = false;
+            }
+
 
                 System.out.println ("Stillingen er nu:");
                 System.out.println (p1.getName() + " totalscore er: " + p1.getScore());
