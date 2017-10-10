@@ -14,7 +14,7 @@ public class Player {
         return this.name;
     }
 
-    public int addScore(int faceValue) {
+    public void addScore(int faceValue) {
         this.score = this.score + faceValue;
     }
 
@@ -31,9 +31,8 @@ public class Player {
         return lastRoll;
     }
 
-    public int setLastRoll() {
+    public void setLastRoll() {
         this.lastRoll = faceValue;
-        return lastRoll;
     }
 
 }
