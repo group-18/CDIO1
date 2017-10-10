@@ -4,7 +4,7 @@ public class Dice {
     private int faceValue;
     private final int MAX=6;
 
-    public Die()
+    public Dice()
     {
         faceValue = 1;
     }
