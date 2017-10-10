@@ -39,30 +39,36 @@ public class Game {
 
                 System.out.println("Du slog " + d1.getFaceValue() + " og " + d2.getFaceValue());
 
-                int sum1 = d1.getFaceValue() + d2.getFaceValue();
-
-                System.out.println("Summen af dit slag er " + sum1);
-
-
-                if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
-                    // Gem i player 1
-                    p1.addScore(sum1);
-                    p1orp2 = false;
+                if (d1.getFaceValue()==d2.getFaceValue() && d1.getFaceValue()==1 && p1orp2==true) {
+                    p1.resetScore();
                 }
-                 else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
-                    p1.addScore(sum1);
-                    p1orp2 = true;
-                } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()){
-                    // Gem i player 2
-                    p2.addScore(sum1);
-                    p1orp2 = true;
+                else if (d1.getFaceValue()==d2.getFaceValue() && d1.getFaceValue()==1 && p1orp2==false){
+                    p2.resetScore();
                 }
-                else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
+                else {
 
-                    p2.addScore(sum1);
-                    p1orp2 = false;
-            }
+                    int sum1 = d1.getFaceValue() + d2.getFaceValue();
 
+                    System.out.println("Summen af dit slag er " + sum1);
+
+
+                    if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
+                        // Gem i player 1
+                        p1.addScore(sum1);
+                        p1orp2 = false;
+                    } else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
+                        p1.addScore(sum1);
+                        p1orp2 = true;
+                    } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()) {
+                        // Gem i player 2
+                        p2.addScore(sum1);
+                        p1orp2 = true;
+                    } else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
+
+                        p2.addScore(sum1);
+                        p1orp2 = false;
+                    }
+                }
 
                 System.out.println ("Stillingen er nu:");
                 System.out.println (p1.getName() + " totalscore er: " + p1.getScore());
