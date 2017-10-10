@@ -3,8 +3,7 @@ package spil;
 public class Player {
     private String name;
     private int score;
-    int faceValue;
-    int lastRoll;
+    private int lastRoll;
 
     public Player(String name){
         this.name=name;

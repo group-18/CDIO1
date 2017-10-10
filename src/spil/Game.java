@@ -55,19 +55,19 @@ public class Game {
                     if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
                         // Gem i player 1
                         p1.addScore(sum1);
-                        p1.setLastRoll(sum1);
                         p1orp2 = false;
                     } else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
                         p1.addScore(sum1);
+                        p1.setLastRoll(sum1);
                         p1orp2 = true;
                     } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()) {
                         // Gem i player 2
                         p2.addScore(sum1);
-                        p2.setLastRoll(sum1);
                         p1orp2 = true;
                     } else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
 
                         p2.addScore(sum1);
+                        p2.setLastRoll(sum1);
                         p1orp2 = false;
                     }
                 }
