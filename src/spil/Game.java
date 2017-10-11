@@ -51,40 +51,45 @@ public class Game {
 
                     System.out.println("Summen af dit slag er " + sum1);
 
+                    if (sum1 == 12 && p1.getLastRoll() == 12 || sum1==12 && p2.getLastRoll()==12) {
+                        break;
+                    } else {
 
-                    if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
-                        // Gem i player 1
-                        p1.addScore(sum1);
-                        p1orp2 = false;
-                    } else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
-                        p1.addScore(sum1);
-                        p1.setLastRoll(sum1);
-                        p1orp2 = true;
-                    } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()) {
-                        // Gem i player 2
-                        p2.addScore(sum1);
-                        p1orp2 = true;
-                    } else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
+                        if (p1orp2 == true && d1.getFaceValue() != d2.getFaceValue()) {
+                            // Gem i player 1
+                            p1.addScore(sum1);
+                            p1orp2 = false;
+                        } else if (p1orp2 == true && d1.getFaceValue() == d2.getFaceValue()) {
+                            p1.addScore(sum1);
+                            p1.setLastRoll(sum1);
+                            p1orp2 = true;
+                        } else if (p1orp2 == false && d1.getFaceValue() != d2.getFaceValue()) {
+                            // Gem i player 2
+                            p2.addScore(sum1);
+                            p1orp2 = true;
+                        } else if (p1orp2 == false && d1.getFaceValue() == d2.getFaceValue()) {
 
-                        p2.addScore(sum1);
-                        p2.setLastRoll(sum1);
-                        p1orp2 = false;
+                            p2.addScore(sum1);
+                            p2.setLastRoll(sum1);
+                            p1orp2 = false;
+                        }
                     }
                 }
-
                 System.out.println ("Stillingen er nu:");
                 System.out.println (p1.getName() + " totalscore er: " + p1.getScore());
                 System.out.println (p2.getName() + " totalscore er: " + p2.getScore());
             }
         }
-        if (p1.getScore()> p2.getScore())
-        {
-            System.out.println(p1.getName() + " har vundet spillet med: " + p1.getScore() + " point");
+        int sum1= d1.getFaceValue()+d2.getFaceValue();
+        if (sum1 == 12 && p1.getLastRoll() == 12 || sum1==12 && p2.getLastRoll()==12) {
+            System.out.println("Du har slået par 6 to gange i træk og har dermed vundet!");
         }
-        else
-        {
-            System.out.println(p2.getName() + " har vundet spillet med: " + p2.getScore() + " point");
+        else {
+            if (p1.getScore() > p2.getScore()) {
+                System.out.println(p1.getName() + " har vundet spillet med: " + p1.getScore() + " point");
+            } else {
+                System.out.println(p2.getName() + " har vundet spillet med: " + p2.getScore() + " point");
+            }
         }
-
     }
 }
