@@ -23,7 +23,7 @@ public class Game {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
 
-        while (p1.getScore() < totalscore && p2.getScore() < totalscore)
+        while (p1.getScore() < totalscore && p2.getScore() < totalscore )
         {
             if (p1orp2 == true) {
                 System.out.println(p1.getName() + "'s tur, tast" + " \"roll\" " + "for at kaste terningen");
@@ -85,10 +85,9 @@ public class Game {
             System.out.println("Du har slået par 6 to gange i træk og har dermed vundet!");
         }
         else {
-            if (p1.getScore() > p2.getScore()) {
-                System.out.println(p1.getName() + " har vundet spillet med: " + p1.getScore() + " point");
-            } else {
-                System.out.println(p2.getName() + " har vundet spillet med: " + p2.getScore() + " point");
+            if (p1.getScore() >= 40 && d1.getFaceValue() == d2.getFaceValue()) {
+                System.out.println(p1.youWin());
+                System.out.println(p2.youWin());
             }
         }
     }

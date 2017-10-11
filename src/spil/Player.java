@@ -34,4 +34,10 @@ public class Player {
         this.lastRoll = faceValue;
     }
 
+    public String youWin(){
+        String win;
+        win = getName() + " har vundet spillet med " + getScore() +" point.";
+        return win;
+    }
+
 }
