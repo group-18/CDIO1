@@ -17,6 +17,11 @@ public class Player {
         this.score = this.score + sum;
     }
 
+    public void setScore(int points)
+    {
+        score=points;
+    }
+
     public int getScore(){
         return this.score;
     }

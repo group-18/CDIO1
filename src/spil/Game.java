@@ -23,7 +23,7 @@ public class Game {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
 
-        while (p1.getScore() < totalscore && p2.getScore() < totalscore )
+        while (p1.getScore() <= totalscore && p2.getScore() <= totalscore )
         {
             if (p1orp2 == true) {
                 System.out.println(p1.getName() + "'s tur, tast" + " \"roll\" " + "for at kaste terningen");
@@ -79,7 +79,14 @@ public class Game {
                 System.out.println (p1.getName() + " totalscore er: " + p1.getScore());
                 System.out.println (p2.getName() + " totalscore er: " + p2.getScore());
             }
-        }
+            if (p1.getScore()>totalscore && d1.getFaceValue()!=d2.getFaceValue()) {
+                p1.setScore(40);
+            }
+                else if (p2.getScore()>totalscore && d1.getFaceValue()!=d2.getFaceValue()){
+                    p2.setScore(40);
+                }
+            }
+
         int sum1= d1.getFaceValue()+d2.getFaceValue();
         if (sum1 == 12 && p1.getLastRoll() == 12 || sum1==12 && p2.getLastRoll()==12) {
             System.out.println("Du har slået par 6 to gange i træk og har dermed vundet!");
@@ -87,6 +94,8 @@ public class Game {
         else {
             if (p1.getScore() >= 40 && d1.getFaceValue() == d2.getFaceValue()) {
                 System.out.println(p1.youWin());
+            }
+            else if (p2.getScore() >= totalscore && d1.getFaceValue() == d2.getFaceValue()){
                 System.out.println(p2.youWin());
             }
         }
