@@ -15,12 +15,6 @@ public class Dice {
         faceValue = (int)(Math.random() * MAX) +1;
     }
 
-    //Sets the face value
-    public void setFaceValue(int value)
-    {
-        faceValue=value;
-    }
-
     //Gets the face value using the setFaceValue method
     public int getFaceValue()
     {
