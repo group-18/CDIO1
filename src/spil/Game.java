@@ -96,11 +96,11 @@ public class Game {
             //Holder spilleren i while løkken så længe han ikke laver et par
             if (p1.getScore()>totalscore && d1.getFaceValue()!=d2.getFaceValue()) {
                 p1.setScore(40);
-                System.out.println ("Du har nået over 40 point, slå et par for at vinde!");
+                System.out.println (p1.getName() + " har nået over 40 point, slå et par for at vinde!(dog ikke par 1)");
             }
                 else if (p2.getScore()>totalscore && d1.getFaceValue()!=d2.getFaceValue()){
                     p2.setScore(40);
-                System.out.println ("Du har nået over 40 point, slå et par for at vinde!");
+                System.out.println (p2.getName() + " har nået over 40 point, slå et par for at vinde!(dog ikke par 1)");
                 }
             }
 
