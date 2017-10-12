@@ -99,10 +99,10 @@ public class Game {
 
             //Giver forskellig vinder besked alt efter om man har vundet ved at slå par 6 to gange i træk
             //eller om man har vundet ved at slå et par og have over 40 point.
-        if (p1.getScore() >= totalscore && d1.getFaceValue() == d2.getFaceValue()) {
+        if (p1.getScore() >= totalscore && d1.getFaceValue() == d2.getFaceValue() && p1orp2==true) {
             System.out.println(p1.getName() + " har vundet ved at slå par " + d1.getFaceValue());
         }
-        else if (p2.getScore() >= totalscore && d1.getFaceValue() == d2.getFaceValue()){
+        else if (p2.getScore() >= totalscore && d1.getFaceValue() == d2.getFaceValue() && p1orp2==false){
             System.out.println(p2.getName() + " har vundet ved at slå par " + d1.getFaceValue());
         }
         else if (d1.getFaceValue()+d2.getFaceValue() == 12 && p1.getLastRoll() == 12) {
