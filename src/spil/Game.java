@@ -9,6 +9,13 @@ public class Game {
         //Bruges til at afgøre om det er spiller 1 eller spiller 2's tur, spiller1=true og spiller2=false
         boolean p1orp2 = true;
 
+        System.out.println("Reglerne for spillet er:");
+        System.out.println("1. Man vinder ved at slå et par hvis man har over 40 point");
+        System.out.println("   *Hvis man slår et par og dette par resulterer i at man får over 40 point vinder man");
+        System.out.println("2. Par 1 nulstiller din score, du kan altså ikke vinde på par 1");
+        System.out.println("3. Hvis man slår et par, får man en tur mere");
+        System.out.println("4. Hvis man slår par 6 to gange i træk vinder man automatisk");
+
         System.out.println("Indtast spiller 1 navn");
         String a = scanner.nextLine();
 
